@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+     
+     .con{
+         width:95%;
+         height:2500px;
+         background-color: rgb(100, 144, 170);
+         margin:auto
+     }
+     .navbar{
+         width:100%;
+         height:100px;
+         display: flex;
+     }
+     button{
+         margin-left: 60px ;
+         background-color: transparent;
+         border:0;
+         font-weight:900;
+     }
+     .mealcontainer{
+         display: grid;
+         grid-template-columns: repeat(3,1fr);
+         grid-template-rows: repeat(3,1fr);
+         grid-gap:15px;
+     }
+     .mealcontainer>div{
+        padding: 10px;
+        text-align: center;
+     }
+     .image{
+         width:100%;
+         height:70%;
+     }
+   .butt{
+       background-color: gray;
+       padding:10px;
+       margin-left: 1%;
+   }
+   #uni{
+       background-color: rgb(139, 61, 61);
+       /* width:20px;
+       height:30px; */
+       height:30px;
+       padding: 5px 15px;
+       margin-top:30px;
+       margin-left: 10px;
+       
+   }
+   #kim{
+       /* margin-top:30px; */
+       margin-left:41%;
+       color:rgb(66, 65, 65)
+   }
+   h1{
+       margin-left:40%;
+       color:rgb(0, 0, 0)
+   }
+   .adress{
+       margin-left: 40%;
+   }
+   .sub{
+       margin-top:10px;
+    margin-left: 45%;
+    background-color: mediumaquamarine;
+   }
+     </style>
+</style>
+<body>
+    <div class="con">
+        <h1>CHECKOUT</h1>
+        <div class="navbar">
+            
+             <!-- <button onclick="gotomenu()">Menu</button> -->
+             <!-- <button id="kim" onclick="gotocart()">CHECKOUT</button> -->
+             
+             <!-- <button class="chk" onclick="checkout()">Checkout</button> -->
+             
+             
+
+
+        </div>
+        <div class="adress">
+            <h2>Address</h2>
+         <p>AT/PO</p>
+         <input type="text">
+         <p> Pincode</p>
+         <input type="text">
+         <p> Location</p>
+         <input type="text">
+         
+      </div>
+      <button class="sub" onclick="setdo()">Submit</button>
+    </div>
+</body>
+</html>
+
+
+<script>
+       function setdo(){
+           let promise=new Promise(function(resolve,reject){
+                   setInterval(function(){
+                        resolve("Your Order is accepted")
+                   },3000)
+                   
+           })
+           promise.then(function(res){
+               alert(res)
+           })
+
+           let promis=new Promise(function(resolve,reject){
+                   setInterval(function(){
+                        resolve("Your Order is being cooked")
+                   },8000)
+                   
+           })
+           promis.then(function(res){
+               alert(res)
+           })
+
+           let promi=new Promise(function(resolve,reject){
+                   setInterval(function(){
+                        resolve("Your Order is ready")
+                   },10000)
+                   
+           })
+           promi.then(function(res){
+               alert(res)
+           })
+
+           let prom=new Promise(function(resolve,reject){
+                   setInterval(function(){
+                        resolve("Your Order is out for delivery")
+                   },12000)
+                   
+           })
+           prom.then(function(res){
+               alert(res)
+           })
+       }
+
+
+</script>

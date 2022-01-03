@@ -1,0 +1,58 @@
+
+     
+  .con{
+      width:95%;
+      height:2500px;
+      background-color: rgb(100, 144, 170);
+      margin:auto
+  }
+  .navbar{
+      width:100%;
+      height:100px;
+      display: flex;
+  }
+  button{
+      margin-left: 60px ;
+      background-color: transparent;
+      border:0;
+      font-weight:900;
+  }
+  .mealcontainer{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      grid-gap:15px;
+  }
+  .mealcontainer>div{
+     padding: 10px;
+     text-align: center;
+  }
+  .image{
+      width:100%;
+      height:70%;
+  }
+.butt{
+    background-color: gray;
+    padding:10px;
+    margin-left: 1%;
+}
+#uni{
+    background-color: rgb(139, 61, 61);
+    /* width:20px;
+    height:30px; */
+    height:30px;
+    padding: 5px 15px;
+    margin-top:30px;
+    margin-left: 10px;
+    
+}
+#kim{
+    /* margin-top:30px; */
+    margin-left:41%;
+    color:rgb(66, 65, 65)
+}
+h1{
+    margin-left:40%;
+    color:rgb(0, 0, 0)
+}
+  

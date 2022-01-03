@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+     
+  .con{
+      width:95%;
+      height:2500px;
+      background-color: rgb(100, 144, 170);
+      margin:auto
+  }
+  .navbar{
+      width:100%;
+      height:100px;
+      display: flex;
+  }
+  button{
+      margin-left: 60px ;
+      background-color: transparent;
+      border:0;
+      font-weight:900;
+  }
+  .mealcontainer{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      grid-gap:15px;
+  }
+  .mealcontainer>div{
+     padding: 10px;
+     text-align: center;
+  }
+  .image{
+      width:100%;
+      height:70%;
+  }
+.butt{
+    background-color: gray;
+    padding:10px;
+    margin-left: 1%;
+}
+#uni{
+    background-color: rgb(139, 61, 61);
+    /* width:20px;
+    height:30px; */
+    height:30px;
+    padding: 5px 15px;
+    margin-top:30px;
+    margin-left: 10px;
+    
+}
+#kim{
+    /* margin-top:30px; */
+    margin-left:41%;
+    color:rgb(66, 65, 65)
+}
+h1{
+    margin-left:40%;
+    color:rgb(0, 0, 0)
+}
+  </style>
+<body>
+    
+    <div class="con">
+        <h1>Cart page</h1>
+        <div class="navbar">
+            
+             <!-- <button onclick="gotomenu()">Menu</button> -->
+             <button id="kim" onclick="gotocart()">CartItems</button>
+             <button id="uni"></button>
+             <button class="chk" onclick="checkout()">Checkout</button>
+
+        </div>
+        <div class="mealcontainer">
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+
+function checkout()
+{
+       window.location.href="checkout.html";
+}
+
+   var pri=0;
+    var cart=JSON.parse(localStorage.getItem("cartitems"))
+    console.log(cart)
+    display(cart)
+    document.querySelector("#uni").textContent=`RS-${pri}`;
+    
+    function display(cart)
+    {
+        
+        document.querySelector(".mealcontainer").innerHTML=""
+        
+        cart.map(function(elem,index){
+            var div=document.createElement("div")
+        var name=document.createElement("p")
+        name.textContent=elem.cname;
+        var price=document.createElement("p")
+        price.textContent=elem.cprice
+        var image=document.createElement("img")
+        image.setAttribute("class","image")
+        image.src=elem.cimg;
+     
+        var butt=document.createElement("button")
+        butt.textContent="Remove"
+        butt.setAttribute("class","butt")
+        
+        butt.addEventListener("click",function(){
+             cart.splice(index,1);
+            localStorage.setItem("cartitems",JSON.stringify(cart))
+            // pri=pri-elem.cprice;
+            
+            display(cart)
+        })
+
+        pri=pri+elem.cprice
+        div.append(image,name,price,butt)
+        document.querySelector(".mealcontainer").append(div)
+        })
+        
+    }
+    
+</script>
